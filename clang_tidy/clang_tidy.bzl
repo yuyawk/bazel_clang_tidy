@@ -207,7 +207,7 @@ def _clang_tidy_aspect_impl(target, ctx):
             exe,
             additional_deps,
             config,
-            c_flags if src.extension == "c" else cxx_flags,
+            c_flags if src.extension in ["c", "h"] else cxx_flags,
             compilation_contexts,
             src,
             target.label.name,
